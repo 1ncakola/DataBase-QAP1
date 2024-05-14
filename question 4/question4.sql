@@ -1,0 +1,13 @@
+CREATE DATABASE LibraryManagement;
+
+CREATE TABLE Writters (
+    AuthorID SERIAL PRIMARY KEY, -- Use SERIAL instead of AUTOINCREMENT
+    Name TEXT NOT NULL
+);
+
+CREATE TABLE Notebooks (
+    BookID SERIAL PRIMARY KEY, -- Use SERIAL instead of AUTOINCREMENT
+    Title TEXT NOT NULL,
+    AuthorID INTEGER NOT NULL,
+    FOREIGN KEY (AuthorID) REFERENCES Writters(AuthorID)
+);
